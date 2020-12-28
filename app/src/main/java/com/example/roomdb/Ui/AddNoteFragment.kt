@@ -61,11 +61,11 @@ class AddNoteFragment : BaseFragment() {
                     val Mnote = Notes(title,desr)
                     if (note == null){
                         NotesDb(it).getNotesDao().addNote(Mnote)
-                        it.toast("Saved Note..")
+                        it.toast("Saved Note")
                     }else{
                         Mnote.id = note!!.id
                         NotesDb(it).getNotesDao().updateNotes(Mnote)
-                        it.toast("Updated Note..")
+                        it.toast("Updated Note")
                     }
 
 
