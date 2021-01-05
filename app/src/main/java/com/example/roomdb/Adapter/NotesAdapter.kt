@@ -14,10 +14,6 @@ import kotlinx.android.synthetic.main.notes_item.view.*
 
 class NotesAdapter (var data : List<Notes>): RecyclerView.Adapter<NotesAdapter.ViewHolder> (){
 
-    class ViewHolder (item :View) :RecyclerView.ViewHolder(item){
-
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.notes_item,parent,false)
         return ViewHolder(v)
@@ -38,5 +34,8 @@ class NotesAdapter (var data : List<Notes>): RecyclerView.Adapter<NotesAdapter.V
             action.note = data[position]
             Navigation.findNavController(it).navigate(action)
         }
+    }
+    class ViewHolder (item :View) :RecyclerView.ViewHolder(item){
+
     }
 }
